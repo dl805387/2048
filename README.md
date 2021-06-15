@@ -1,5 +1,5 @@
 # 2048
-description
+This is a clone of the 2048 game
 
 ## Getting Started with Create React App
 
