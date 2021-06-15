@@ -43,7 +43,7 @@ function App() {
         } 
     });
 
-    // Update the states
+    // Update the game state
     const updateBoard = () => {
         setGState(game.gameState);
         setT1(game.gameState.board[0]);
@@ -121,25 +121,25 @@ function App() {
     }
     
     // This is for testing purposes
-    useEffect(() => {
-        game.gameState.board[0] = 1024;
-        game.gameState.board[1] = 1024;
-        game.gameState.board[2] = 124;
-        game.gameState.board[3] = 104;
-        game.gameState.board[4] = 102;
-        game.gameState.board[5] = 124;
-        game.gameState.board[6] = 104;
-        game.gameState.board[7] = 104;
-        game.gameState.board[8] = 24;
-        game.gameState.board[9] = 14;
-        game.gameState.board[10] = 24;
-        game.gameState.board[11] = 124;
-        game.gameState.board[12] = 24;
-        game.gameState.board[13] = 4;
-        game.gameState.board[14] = 102;
-        game.gameState.board[15] = 24;
-        updateBoard();
-    }, []);
+    // useEffect(() => {
+    //     game.gameState.board[0] = 1024;
+    //     game.gameState.board[1] = 1024;
+    //     game.gameState.board[2] = 124;
+    //     game.gameState.board[3] = 104;
+    //     game.gameState.board[4] = 102;
+    //     game.gameState.board[5] = 124;
+    //     game.gameState.board[6] = 104;
+    //     game.gameState.board[7] = 104;
+    //     game.gameState.board[8] = 24;
+    //     game.gameState.board[9] = 14;
+    //     game.gameState.board[10] = 24;
+    //     game.gameState.board[11] = 124;
+    //     game.gameState.board[12] = 24;
+    //     game.gameState.board[13] = 4;
+    //     game.gameState.board[14] = 102;
+    //     game.gameState.board[15] = 24;
+    //     updateBoard();
+    // }, []);
 
 
     return (

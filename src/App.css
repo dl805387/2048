@@ -59,11 +59,11 @@ html,body{
 }
 
 
-@media (max-width: 550px) 
+@media (max-width: 559px) 
 {
     .tile {
         font-size: 40px;
-        height: 100px;
+        height: 95px;
         padding-top: 15px;
         border-width: 4px;
     }
