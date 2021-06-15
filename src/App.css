@@ -21,11 +21,11 @@
 }
 
 .title {
-    margin: 1%;
+    margin-left: 10px;
 }
   
 .button {
-    margin: 1%;
+    margin-left: 10px;
 }
   
 .overLabel {
@@ -34,7 +34,6 @@
   
 .wonLabel {
     font-size: 50px;
-    margin: 1%;
 }
 
 body {
@@ -51,9 +50,16 @@ p {
     padding-top: 25px;
 }
 
+.instr {
+    padding: 10px;
+}
+
+html,body{
+    overflow-x: hidden;
+}
 
 
-@media (max-width: 400px) 
+@media (max-width: 550px) 
 {
     .tile {
         font-size: 40px;
@@ -69,5 +75,42 @@ p {
     .largeNum {
         font-size: 30px;
         padding-top: 20px;
+    }
+
+    .overLabel {
+        font-size: 40px;
+        margin-left: 10px;
+    }
+      
+    .wonLabel {
+        font-size: 40px;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 379px) 
+{
+    .tile {
+        font-size: 30px;
+        height: 80px;
+        padding-top: 15px;
+        border-width: 2px;
+    }
+      
+    .board {
+        width: 300px;
+    }
+
+    .largeNum {
+        font-size: 25px;
+        padding-top: 20px;
+    }
+
+    .overLabel {
+        font-size: 30px;
+    }
+      
+    .wonLabel {
+        font-size: 30px;
     }
 }

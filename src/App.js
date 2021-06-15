@@ -94,17 +94,17 @@ function App() {
 
     // Used to change the color of the tile depending on the number
     const color = (num) => {
-        if (num == 2) {
+        if (num === 2) {
             return "white";
         } else if (num === 4) {
             return "rgb(25, 247, 255)";
-        } else if (num == 8) {
+        } else if (num === 8) {
             return "rgb(25, 255, 205)";
-        } else if (num == 16) {
+        } else if (num === 16) {
             return "rgb(25, 255, 121)";
-        } else if (num == 32) {
+        } else if (num === 32) {
             return "rgb(187, 255, 0)";
-        } else if (num == 64) {
+        } else if (num === 64) {
             return "rgb(255, 252, 58)";
         } else if (num > 64){
             return "rgb(255, 159, 50)";
@@ -122,8 +122,8 @@ function App() {
     
     // This is for testing purposes
     useEffect(() => {
-        game.gameState.board[0] = 124;
-        game.gameState.board[1] = 104;
+        game.gameState.board[0] = 1024;
+        game.gameState.board[1] = 1024;
         game.gameState.board[2] = 124;
         game.gameState.board[3] = 104;
         game.gameState.board[4] = 102;
@@ -142,14 +142,9 @@ function App() {
     }, []);
 
 
-    // to do
-    // make text size smaller if number is 1000 or bigger
-    // find a way to do this for mobile screen
-
-
     return (
         <div>
-            <p>HOW TO PLAY: Use your arrow keys to move the tiles. Tiles with the same number merge into one when they touch. Add them up to reach 2048!</p>
+            <p className="instr">HOW TO PLAY: Use your arrow keys to move the tiles. Tiles with the same number merge into one when they touch. Add them up to reach 2048!</p>
 
             <div className="columns">
                 <div className="column">
@@ -157,13 +152,12 @@ function App() {
                     <button className="button" type="button" onClick={() => {game.setupNewGame(); updateBoard();}}>New Game</button>
                 </div>
 
+                <div className="column">
+                    <p className="overLabel">{isGameOver(gState.over)}</p>
+                </div>
 
                 <div className="column">
                     <p className="wonLabel">{hasWon(gState.won)}</p>
-                </div>
-
-                <div className="overPopup">
-                    <p className="overLabel">{isGameOver(gState.over)}</p>
                 </div>
             </div>
 
