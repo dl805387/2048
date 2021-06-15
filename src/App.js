@@ -26,15 +26,6 @@ function App() {
     const [t15, setT15] = useState(game.gameState.board[14]);
     const [t16, setT16] = useState(game.gameState.board[15]);
 
-  // This is testing for when the user wins
-  // useEffect(() => {
-  //   const winTesting = () => {
-  //     game.gameState.board[0] = 1024;
-  //     game.gameState.board[1] = 1024;
-  //     updateBoard();
-  //   };
-  //   winTesting();
-  // }, []);
 
     useKeypress(['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'], (event) => {
         if (event.key === 'ArrowLeft') {
@@ -102,74 +93,111 @@ function App() {
     }
 
     // Used to change the color of the tile depending on the number
-    const colorr = (num) => {
+    const color = (num) => {
         if (num == 2) {
             return "white";
         } else if (num === 4) {
-            return "lightyellow";
+            return "rgb(25, 247, 255)";
         } else if (num == 8) {
-            return "orange";
+            return "rgb(25, 255, 205)";
         } else if (num == 16) {
-            return "darkorange";
+            return "rgb(25, 255, 121)";
         } else if (num == 32) {
-            return "orangered";
+            return "rgb(187, 255, 0)";
         } else if (num == 64) {
-            return "red";
+            return "rgb(255, 252, 58)";
         } else if (num > 64){
-            return "yellow";
+            return "rgb(255, 159, 50)";
         }
     } 
 
-  return (
-    <div>
-        <p>HOW TO PLAY: Use your arrow keys to move the tiles. Tiles with the same number merge into one when they touch. Add them up to reach 2048!</p>
+    // change font size if number is too big
+    const reSize = (num) => {
+        if (num >= 1000) {
+            return " largeNum";
+        } else {
+            return "";
+        }
+    }
+    
+    // This is for testing purposes
+    useEffect(() => {
+        game.gameState.board[0] = 124;
+        game.gameState.board[1] = 104;
+        game.gameState.board[2] = 124;
+        game.gameState.board[3] = 104;
+        game.gameState.board[4] = 102;
+        game.gameState.board[5] = 124;
+        game.gameState.board[6] = 104;
+        game.gameState.board[7] = 104;
+        game.gameState.board[8] = 24;
+        game.gameState.board[9] = 14;
+        game.gameState.board[10] = 24;
+        game.gameState.board[11] = 124;
+        game.gameState.board[12] = 24;
+        game.gameState.board[13] = 4;
+        game.gameState.board[14] = 102;
+        game.gameState.board[15] = 24;
+        updateBoard();
+    }, []);
 
-        <div className="columns">
-            <div className="column">
-                <p className="title">{"Score: " + gState.score}</p>
-                <button className="button" type="button" onClick={() => {game.setupNewGame(); updateBoard();}}>New Game</button>
+
+    // to do
+    // make text size smaller if number is 1000 or bigger
+    // find a way to do this for mobile screen
+
+
+    return (
+        <div>
+            <p>HOW TO PLAY: Use your arrow keys to move the tiles. Tiles with the same number merge into one when they touch. Add them up to reach 2048!</p>
+
+            <div className="columns">
+                <div className="column">
+                    <p className="title">{"Score: " + gState.score}</p>
+                    <button className="button" type="button" onClick={() => {game.setupNewGame(); updateBoard();}}>New Game</button>
+                </div>
+
+
+                <div className="column">
+                    <p className="wonLabel">{hasWon(gState.won)}</p>
+                </div>
+
+                <div className="overPopup">
+                    <p className="overLabel">{isGameOver(gState.over)}</p>
+                </div>
             </div>
 
-            <div className="column">
-                <p className="overLabel">{isGameOver(gState.over)}</p>
-            </div>
+            <div className="board">
+                <div className="columns is-mobile">
+                    <div className={"column tile" + reSize(t1)} style={{backgroundColor: color(t1), fontSize: reSize(t1)}}>{isEmptyTile(t1)}</div>
+                    <div className={"column tile" + reSize(t2)} style={{backgroundColor: color(t2)}}>{isEmptyTile(t2)}</div>
+                    <div className={"column tile" + reSize(t3)} style={{backgroundColor: color(t3)}}>{isEmptyTile(t3)}</div>
+                    <div className={"column tile" + reSize(t4)} style={{backgroundColor: color(t4)}}>{isEmptyTile(t4)}</div>
+                </div>
 
-            <div className="column">
-                <p className="wonLabel">{hasWon(gState.won)}</p>
+                <div className="columns is-mobile">
+                    <div className={"column tile" + reSize(t5)} style={{backgroundColor: color(t5)}}>{isEmptyTile(t5)}</div>
+                    <div className={"column tile" + reSize(t6)} style={{backgroundColor: color(t6)}}>{isEmptyTile(t6)}</div>
+                    <div className={"column tile" + reSize(t7)} style={{backgroundColor: color(t7)}}>{isEmptyTile(t7)}</div>
+                    <div className={"column tile" + reSize(t8)} style={{backgroundColor: color(t8)}}>{isEmptyTile(t8)}</div>
+                </div>
+
+                <div className="columns is-mobile">
+                    <div className={"column tile" + reSize(t9)} style={{backgroundColor: color(t9)}}>{isEmptyTile(t9)}</div>
+                    <div className={"column tile" + reSize(t10)} style={{backgroundColor: color(t10)}}>{isEmptyTile(t10)}</div>
+                    <div className={"column tile" + reSize(t11)} style={{backgroundColor: color(t11)}}>{isEmptyTile(t11)}</div>
+                    <div className={"column tile" + reSize(t12)} style={{backgroundColor: color(t12)}}>{isEmptyTile(t12)}</div>
+                </div>
+
+                <div className="columns is-mobile">
+                    <div className={"column tile" + reSize(t13)} style={{backgroundColor: color(t13)}}>{isEmptyTile(t13)}</div>
+                    <div className={"column tile" + reSize(t14)} style={{backgroundColor: color(t14)}}>{isEmptyTile(t14)}</div>
+                    <div className={"column tile" + reSize(t15)} style={{backgroundColor: color(t15)}}>{isEmptyTile(t15)}</div>
+                    <div className={"column tile" + reSize(t16)} style={{backgroundColor: color(t16)}}>{isEmptyTile(t16)}</div>
+                </div>
             </div>
         </div>
-
-        <div className="board">
-            <div className="columns is-mobile">
-                <div className="column tile" style={{backgroundColor: colorr(t1)}}>{isEmptyTile(t1)}</div>
-                <div className="column tile" style={{backgroundColor: colorr(t2)}}>{isEmptyTile(t2)}</div>
-                <div className="column tile" style={{backgroundColor: colorr(t3)}}>{isEmptyTile(t3)}</div>
-                <div className="column tile" style={{backgroundColor: colorr(t4)}}>{isEmptyTile(t4)}</div>
-            </div>
-
-            <div className="columns is-mobile">
-                <div className="column tile" style={{backgroundColor: colorr(t5)}}>{isEmptyTile(t5)}</div>
-                <div className="column tile" style={{backgroundColor: colorr(t6)}}>{isEmptyTile(t6)}</div>
-                <div className="column tile" style={{backgroundColor: colorr(t7)}}>{isEmptyTile(t7)}</div>
-                <div className="column tile" style={{backgroundColor: colorr(t8)}}>{isEmptyTile(t8)}</div>
-            </div>
-
-            <div className="columns is-mobile">
-                <div className="column tile" style={{backgroundColor: colorr(t9)}}>{isEmptyTile(t9)}</div>
-                <div className="column tile" style={{backgroundColor: colorr(t10)}}>{isEmptyTile(t10)}</div>
-                <div className="column tile" style={{backgroundColor: colorr(t11)}}>{isEmptyTile(t11)}</div>
-                <div className="column tile" style={{backgroundColor: colorr(t12)}}>{isEmptyTile(t12)}</div>
-            </div>
-
-            <div className="columns is-mobile">
-                <div className="column tile" style={{backgroundColor: colorr(t13)}}>{isEmptyTile(t13)}</div>
-                <div className="column tile" style={{backgroundColor: colorr(t14)}}>{isEmptyTile(t14)}</div>
-                <div className="column tile" style={{backgroundColor: colorr(t15)}}>{isEmptyTile(t15)}</div>
-                <div className="column tile" style={{backgroundColor: colorr(t16)}}>{isEmptyTile(t16)}</div>
-            </div>
-        </div>
-    </div>
-  );
+    );
 }
 
 export default App;
