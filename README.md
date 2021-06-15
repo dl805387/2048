@@ -1,5 +1,12 @@
 # 2048
-This is a clone of the 2048 game
+https://2048-dl.netlify.app
+
+
+## About
+This is a clone of the 2048 game\
+How to play: Use your arrow keys to move the tiles. Tiles with the same number merge into one when they touch. Add them up to reach 2048.\
+Enjoy!
+
 
 ## Getting Started with Create React App
 
