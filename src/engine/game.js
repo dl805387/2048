@@ -27,6 +27,12 @@ export default class Game {
                 break;
             }
         }
+        this.gameState.score = 0;
+        this.gameState.won = false;
+        this.gameState.over = false;
+        this.moves = [];
+        this.wins = [];
+        this.loses = [];
     }
 
     loadGame = (gameState) => {
