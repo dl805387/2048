@@ -140,32 +140,32 @@ function App() {
         </div>
 
         <div className="board">
-            <div className="columns topRow">
+            <div className="columns is-mobile">
                 <div className="column tile" style={{backgroundColor: colorr(t1)}}>{isEmptyTile(t1)}</div>
                 <div className="column tile" style={{backgroundColor: colorr(t2)}}>{isEmptyTile(t2)}</div>
                 <div className="column tile" style={{backgroundColor: colorr(t3)}}>{isEmptyTile(t3)}</div>
-                <div className="column tile lastCol" style={{backgroundColor: colorr(t4)}}>{isEmptyTile(t4)}</div>
+                <div className="column tile" style={{backgroundColor: colorr(t4)}}>{isEmptyTile(t4)}</div>
             </div>
 
-            <div className="columns">
+            <div className="columns is-mobile">
                 <div className="column tile" style={{backgroundColor: colorr(t5)}}>{isEmptyTile(t5)}</div>
                 <div className="column tile" style={{backgroundColor: colorr(t6)}}>{isEmptyTile(t6)}</div>
                 <div className="column tile" style={{backgroundColor: colorr(t7)}}>{isEmptyTile(t7)}</div>
-                <div className="column tile lastCol" style={{backgroundColor: colorr(t8)}}>{isEmptyTile(t8)}</div>
+                <div className="column tile" style={{backgroundColor: colorr(t8)}}>{isEmptyTile(t8)}</div>
             </div>
 
-            <div className="columns">
+            <div className="columns is-mobile">
                 <div className="column tile" style={{backgroundColor: colorr(t9)}}>{isEmptyTile(t9)}</div>
                 <div className="column tile" style={{backgroundColor: colorr(t10)}}>{isEmptyTile(t10)}</div>
                 <div className="column tile" style={{backgroundColor: colorr(t11)}}>{isEmptyTile(t11)}</div>
-                <div className="column tile lastCol" style={{backgroundColor: colorr(t12)}}>{isEmptyTile(t12)}</div>
+                <div className="column tile" style={{backgroundColor: colorr(t12)}}>{isEmptyTile(t12)}</div>
             </div>
 
-            <div className="columns">
+            <div className="columns is-mobile">
                 <div className="column tile" style={{backgroundColor: colorr(t13)}}>{isEmptyTile(t13)}</div>
                 <div className="column tile" style={{backgroundColor: colorr(t14)}}>{isEmptyTile(t14)}</div>
                 <div className="column tile" style={{backgroundColor: colorr(t15)}}>{isEmptyTile(t15)}</div>
-                <div className="column tile lastCol" style={{backgroundColor: colorr(t16)}}>{isEmptyTile(t16)}</div>
+                <div className="column tile" style={{backgroundColor: colorr(t16)}}>{isEmptyTile(t16)}</div>
             </div>
         </div>
     </div>
